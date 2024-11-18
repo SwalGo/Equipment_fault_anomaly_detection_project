@@ -1,0 +1,1 @@
+# Equipment_fault_anomaly_detection_project
