@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Display</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>CSV Data</h2>
+      <div id="csv-data">{{ data | safe }}</div>
+
+      <h2>Anomaly Data from JSON</h2>
+      <table id="json-data-table" class="data-table">
+        <thead>
+          <tr>
+            <th>DateTime</th>
+            <th>Value</th>
+            <th>Anomaly</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in anomalies %}
+          <tr>
+            <td>{{ item.datetime }}</td>
+            <td>{{ item.value }}</td>
+            <td>{{ item.is_anomaly }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

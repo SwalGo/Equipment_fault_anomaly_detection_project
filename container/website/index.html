@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Upload CSV and JSON Files</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Upload CSV and JSON Files</h2>
+      <form
+        id="upload-form"
+        action="{{ url_for('upload') }}"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <label for="data_file">CSV File:</label>
+        <input
+          type="file"
+          name="data_file"
+          id="data_file"
+          required
+        /><br /><br />
+
+        <label for="json_file">JSON File:</label>
+        <input
+          type="file"
+          name="json_file"
+          id="json_file"
+          required
+        /><br /><br />
+
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+  </body>
+</html>
